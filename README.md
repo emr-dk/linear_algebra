@@ -6,11 +6,14 @@ The interplay of columns and rows is the heart of linear algebra. Four of the ce
 * Elimination (the good way to find the rank of a matrix).
 
 ## Multiplication 
+Matrix multiplication is associative: (AB)C = A(BC)
+Matrix operations are distributive: A(B + C) = AB + AC and (B + C)D = BD + CD.
+Matrix multiplication is not commutative: Usually FE not equal EF
 
 dot product: 
 $$u \cdot v = ||u|| \cdot ||v|| \cdot cos (\phi) = u_x v_x + u_y v_y$$
 cross product:
-$$u \times v = \left (\begin{array}{c}u_y v_z - u_z v_y\\u_z v_x - u_x v_z\\u_x v_y - u_y v_x\\\end{array}\right)$$
+$$u \times v = \left(\begin{array}{c}u_y v_z - u_z v_y\\u_z v_x - u_x v_z\\u_x v_y - u_y v_x\\\end{array}\right)$$
 norms:
 $$\|x\|_p := \sqrt[p]{\sum_{i=1}^n |x_i|^p}$$
 $$\|x\|_1 := \sum_{i=1}^{n} |x_i|$$
