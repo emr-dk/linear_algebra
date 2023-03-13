@@ -8,12 +8,13 @@ The interplay of columns and rows is the heart of linear algebra. Four of the ce
 ## Multiplication 
 
 dot product: 
-$$u * v = ||u|| * ||v|| * cos (\phi) = u_x v_x + u_y v_y$$
-cross product: $u \times v = \left (\begin{array}{c}u_y v_z - u_z v_y\\u_z v_x - u_x v_z\\u_x v_y - u_y v_x\\\end{array}\right)$\\
-norms:\\
-$\|x\|_p := \sqrt[p]{\sum_{i=1}^n |x_i|^p}$\\
-$\|x\|_1 := \sum_{i=1}^{n} |x_i|$ \;
-$\|x\|_{\infty} = \max \limits _i |x_i|$\\
+$$u \cdot v = ||u|| \cdot ||v|| \cdot cos (\phi) = u_x v_x + u_y v_y$$
+cross product: 
+$$u \times v = \left (\begin{array}{c}u_y v_z - u_z v_y\\u_z v_x - u_x v_z\\u_x v_y - u_y v_x\\\end{array}\right)$$
+norms:
+$$\|x\|_p := \sqrt[p]{\sum_{i=1}^n |x_i|^p}$$
+$$\|x\|_1 := \sum_{i=1}^{n} |x_i|$$
+$$\|x\|_{\infty} = \max \limits _i |x_i|$$
 
 transpose: $[A^\mathrm{T}]_{ij} = [A]_{ji}$: "mirror over main diagonal"\\
 conjungate transpose / adjugate: 
