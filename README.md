@@ -11,7 +11,21 @@ The interplay of columns and rows is the heart of linear algebra. Four of the ce
 * The row space (all combinations of the rows).
 * The rank (the number of independent columns) (or rows).
 * Elimination (the good way to find the rank of a matrix).
-$$\begin{tikzpicture}[line cap=round] \coordinate (O) at (0,0);\coordinate (A) at ( -3:2.1);\coordinate (B) at ( 55:1.4);\coordinate (A+B) at ($(A)+(B)$);\draw[vector,thin arrow,myred!40] (B) -- (A+B) node[midway,above] {$\vb{a}$};\draw[vector,thin arrow,myblue!40] (A) -- (A+B) node[midway,below right=-2] {$\vb{b}$};\draw[vector,myred] (O) -- (A) node[midway,below] {$\vb{a}$};\draw[vector,myblue] (O) -- (B) node[midway,above left=-2] {$\vb{b}$};\draw[vector,mypurple] (O) -- (A+B) node[above right=-3] {$\vb{a}+\vb{b}$};\end{tikzpicture}$$
+```latex
+% TWO VECTORS SUM
+\begin{tikzpicture}[line cap=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ( -3:2.1);
+  \coordinate (B) at ( 55:1.4);
+  \coordinate (A+B) at ($(A)+(B)$);
+  
+  \draw[vector,thin arrow,myred!40] (B) -- (A+B) node[midway,above] {$\vb{a}$};
+  \draw[vector,thin arrow,myblue!40] (A) -- (A+B) node[midway,below right=-2] {$\vb{b}$};
+  
+  \draw[vector,myred] (O) -- (A) node[midway,below] {$\vb{a}$};
+  \draw[vector,myblue] (O) -- (B) node[midway,above left=-2] {$\vb{b}$};
+  \draw[vector,mypurple] (O) -- (A+B) node[above right=-3] {$\vb{a}+\vb{b}$};
+\end{tikzpicture}```
 ## Multiplication 
 Matrix multiplication is associative: (AB)C = A(BC)
 Matrix operations are distributive: A(B + C) = AB + AC and (B + C)D = BD + CD.
