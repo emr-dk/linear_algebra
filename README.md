@@ -11,8 +11,7 @@ The interplay of columns and rows is the heart of linear algebra. Four of the ce
 * The row space (all combinations of the rows).
 * The rank (the number of independent columns) (or rows).
 * Elimination (the good way to find the rank of a matrix).
-$$% TWO VECTORS SUM
-\begin{tikzpicture}[line cap=round]
+$$\begin{tikzpicture}[line cap=round]
   \coordinate (O) at (0,0);
   \coordinate (A) at ( -3:2.1);
   \coordinate (B) at ( 55:1.4);
