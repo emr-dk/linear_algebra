@@ -4,12 +4,8 @@ Vectors of Real numbers, define an n dimensional vector:
 $v=(a,b,c), u=(x,y,z)$
 
 Matrices of real numbers ..
-```math
-\begin{bmatrix}
-   a & b \\
-   c & d
-\end{bmatrix}
-```
+$\begin{bmatrix}a&b\\c&d\end{bmatrix}$
+
 
 The interplay of columns and rows is the heart of linear algebra. Four of the central ideas:
 * The column space (all combinations of the columns).
