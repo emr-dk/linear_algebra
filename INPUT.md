@@ -1,5 +1,5 @@
 # Important concepts of Linear Algebra
-My own interpretation of linear algebra concepts, from a wide variety of sources including Gilbert Strang, ..., ... and ... .
+My notes on linear algebra concepts, from a wide variety of sources including Gilbert Strang, the Deep Learning Book, and various online resources.
 ## Representations
 There are a variety of ways of representing the different elements of linear algebra. 
 * Scalar, greek letters $\beta, \alpha, \theta$
@@ -7,27 +7,43 @@ There are a variety of ways of representing the different elements of linear alg
 * Matrix, capital letters bold: **A**,**B**,**C**
 * Vector space, $V$
 
-
 ## Vectors, matrices, $\mathbb{R}$ ... Oh my!
-In linear algebra we will be working with elements that exist in a variety of dimensions. The numbers we will be working with are most commonly though real numbers $\mathbb{R}$.
-The dimensions that a matrix or vector exist in are indicated by the superscript $n$ above an indicator for the number space we are working in $\mathbb{R}$. So, a vector in three-dimensional space is defined as $v \in \mathbb{R}^3$. $\mathbb{R}^n$ is also called the euclidean vector space.
+In linear algebra we will be working with elements that exist in a variety of dimensions. The numbers we will be working with are most commonly real numbers - $\mathbb{R}$.
+In a moment we will introduce some important concepts, matrix and vector. These exist in a variety of dimensions which are indicated by the superscript $n$ above an indicator for the number space we are working in $\mathbb{R}$. So, a vector in three-dimensional space is defined as $v \in \mathbb{R}^3$. $\mathbb{R}^n$ is also called the euclidean vector space.
 
 For all $n$ of euclidean space we can work with general terms such as distance, length and angle. This is is hard / impossible to conceptualize at $n > 3$ - but all the concepts still apply though. 
 
-**Scalars**: When working with single numbers in linear algebra, these are referred to as scalars. Probably because they as single numbers are used to scale vectors and matrices. So for instance:
+**Scalars**: When working with single numbers in linear algebra, these are referred to as scalars. These numbers can be used to scale vectors and matrices. So for instance the following are examples of scalars:
 $$\beta = 5, \alpha = 0.524, \theta = 19295$$
 
 **Vectors:** A vector consists of a number of components. The amount of components also corresponds to the amount of dimensions it exists in. A vector with two components is a point in a two dimensional space ($x \space y)$, whilst a vector with three components is in a three-dimensional space ($x \space y \space z$) and so on. 
+$$\bold{v}=(x_1,x_2, \cdots, x_n)$$ 
 
-$$\bold{v}=(x_1,x_2, \cdots, x_n) \text{ or } \bold{v}^T =\begin{pmatrix}
+Even though we formally wont introduce the transpose until later it is so frequently used that we will show a transposed vector below:
+
+$$\bold{v}^T =\begin{pmatrix}
    x_1 \\
    x_2 \\
    \vdots \\
    x_n
 \end{pmatrix}$$ 
+
 A geometric vector is usually demonstrated with an arrow above the letter $\vec{v}$, but as we are working with a more generalized concpet of vectors we use the boldface indicator.
 
-**Matrix:** A central element of linear algebra is the concept of systems of linear equations. A system of linear equations could be:
+**Matrices:** Matrices are arrangements of numbers into rows and columns, used when solving systems of linear equations. The size of the matrix is written as a matrix row $\times$ column vector. Usually $n \times m$. In the example below $A$ is a $2 \times 2$ matrix and $B$ a $2 \times 3$. These are written in the following form:
+$$ \bold{A} =
+\begin{bmatrix}
+   x_{1,1} & x_{1,2} \\
+   x_{2,1} & x_{2,2}
+\end{bmatrix}, \bold{B}= 
+\begin{bmatrix}
+   x_{1,1} & x_{1,2} & x_{1,3} \\
+   x_{2,1} & x_{2,2} & x_{2,3}
+\end{bmatrix}
+$$
+
+## Systems of linear equations
+A central element of linear algebra is the concept of systems of linear equations. A system of linear equations could be:
 $$
 \begin{alignat*}{4}
    x_1 & {} + {} x_2 & {} + {} x_3 = 3 \\
@@ -35,7 +51,8 @@ $$
    2x_1 & {} & + {} 3x_3 = 1
 \end{alignat*}
 $$
-To compactly represent these systems matrices are used. These are rectangular schemes that consist of $m$ rows and $n$ columns. There are many forms of matrices, some showing the $y$'s as well. But the most common is to gather all the numbers in front of the varaibles, so that is what we will do here. So the system from before becomes: 
+
+As mentioned previously we can represent these systems in matrices. There are many forms of matrices, some showing the $y$'s as well. But the most common is to gather all the numbers in front of the varaibles, so that is what we will do here. So the system from before becomes: 
 $$
 \begin{bmatrix}
    1 & 1 & 1 \\
@@ -43,41 +60,81 @@ $$
    2 & 0 & 3
 \end{bmatrix}
 $$
-The vector 
+To solve a system of linear equations means to find such values of the variables that all of its equations are simultaneously satisfied. A linear system is inconsistent if it has no solution, and otherwise it is said to be consistent. Consistent system can have one or infinite number of solutions
 
+I will not go into how to solve these systems here 
+## Math with vectors and matrices
 
-A system of linear equations (or linear system) is a collection of one or more linear equations involving the same variables.  
-
-To solve a system of linear equations means to find such values of the variables that all of its equations are simultaneously satisfied. 
-
-A linear system is inconsistent if it has no solution, and otherwise it is said to be consistent. Consistent system can have one or infinite number of solutions
-
-In the elimination method you either add or subtract the equations of the linear system to get an equation with smaller number of variables. If needed, you can also multiply whole equation by non-zero number.
-
-Matrices are arrangements of numbers into rows and columns, used when solving systems of linear equations. The size of the matrix is written as a matrix row $\times$ column vector. Usually $n \times m$. Two $2 \times 2$ vectors are written as:
-$$ A =
-\begin{bmatrix}
-   a & b \\
-   c & d
-\end{bmatrix}, B= 
-\begin{bmatrix}
-   x & y \\
-   w & z
-\end{bmatrix}
+It should be noted that for most intents and purposes a vector is simply a matrix with one column. I.e. it is a 1-dimensional matrix of the form $1 \times n$. 
+### Scalar math
+**Scalar multiplication** Multiplying a scalar into either a vector or a matrix is quite simple. As mentioned previously it simply scales them and thus:
 $$
-Matrices are used in the solving of systems of linear equations, where the following system is written in the indicated form:
-$$\begin{matrix}
-   3x+2y-z=1 \\
-   2x-2y+4z=2 
-\end{matrix}
-\Rightarrow
+\beta \cdot \bold{v}=(\beta x_1,\beta x_2, \cdots, \beta x_n)
+$$
+$$
+ \beta \cdot \bold{A} =
 \begin{bmatrix}
-   3 & 2 & -1 & 1\\
-   2 & -2 & 4 & 2
+   \beta x_{1,1} & \beta x_{1,2} \\
+   \beta x_{2,1} & \beta x_{2,2}
 \end{bmatrix}
 $$
 
-## Working with vectors and matrices
+### Non-scalar math
+From here on things get a bit more hairy. To multiply vectors and matrices the first element must have the same amount of columns as the other has rows. That means that a $m \times n$ element can be multiplied by a $n \times p$ element. But not the other way around. 
+
+### Dot products
+All dot products (or scalar products) return a scalar. I.e. a single value.
+
+
+Geometric definition
+$$
+\bold{v} \cdot \bold{u} = \lvert \bold{v} \rvert \cdot \lvert \bold{u} \rvert \cos{\theta}
+$$
+"normal" definition
+$$
+\bold{v} \cdot \bold{u} = \sum_{i=1}^{n} v_i u_i 
+$$
+
+### Cross product
+Where a dot product returns a scalar, the cross product always returns a matrix. 
+
+$$
+a \times b = \lvert a \rvert \lvert b \rvert \sin(\theta) n
+$$ 
+
+$$ \bold{A} \times \bold{B} = 
+\begin{bmatrix}
+   a_{1,1} & a_{1,2} \\
+   a_{2,1} & a_{2,2}
+\end{bmatrix}
+\begin{bmatrix}
+   b_{1,1} & b_{1,2} & b_{1,3} \\
+   b_{2,1} & b_{2,2} & b_{2,3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+   a_{1,1} b_{1,1} & a_{1,1} b_{1,1} \\
+   a_{1,1} b_{1,1} & a_{1,1} b_{1,1}
+\end{bmatrix}
+$$
+$$ \bold{A} =
+\begin{bmatrix}
+   x_{1,1} & x_{1,2} \\
+   x_{2,1} & x_{2,2}
+\end{bmatrix}, \bold{B}= 
+\begin{bmatrix}
+   x_{1,1} & x_{1,2} & x_{1,3} \\
+   x_{2,1} & x_{2,2} & x_{2,3}
+\end{bmatrix}
+$$
+
+
+**Vector matrix multiplication**
+
+**Matrix multiplication**
+
+**Mathematical properties of matrices** 
+
 ### Vectors
 
 dot product / inner product: 
