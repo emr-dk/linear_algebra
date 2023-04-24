@@ -42,6 +42,8 @@ $$ \bold{A} =
 \end{bmatrix}
 $$
 
+If $m = n$ the matrix is said to be square of degree $n$.$ 
+
 ## Systems of linear equations
 A central element of linear algebra is the concept of systems of linear equations. A system of linear equations could be:
 $$
@@ -63,11 +65,87 @@ $$
 To solve a system of linear equations means to find such values of the variables that all of its equations are simultaneously satisfied. A linear system is inconsistent if it has no solution, and otherwise it is said to be consistent. Consistent system can have one or infinite number of solutions
 
 I will not go into how to solve these systems here 
-## Math with vectors and matrices
 
-It should be noted that for most intents and purposes a vector is simply a matrix with one column. I.e. it is a 1-dimensional matrix of the form $1 \times n$. 
-### Scalar math
-**Scalar multiplication** Multiplying a scalar into either a vector or a matrix is quite simple. As mentioned previously it simply scales them and thus:
+**Diagonal matrix** is a square matrix containing zeroes everywhere except non-zero values in the diagonal. This is indicated as $D = diag(d_1, \dots, d_n)$ and can be understood as
+
+$$ D = 
+\left(\begin{array}{c}d_1 & 0 & \cdots & 0 \\
+0 & \ddots & \ddots & \vdots \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & 0 & d_n \end{array}\right)
+$$
+
+**Identity Matrix** is a diagonal matrix with 1's in the place of $d_n$. The matrix is denoted as $\bold{I}$ and written as:
+$$ D = 
+\left(\begin{array}{c}1 & 0 & \cdots & 0 \\
+0 & \ddots & \ddots & \vdots \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & 0 & 1 \end{array}\right)
+$$
+The identity matrix is special in the sense that:
+$$
+\bold{I} \times \bold{A} = \bold{A} \times \bold{I} = \bold{A}
+$$
+
+$$
+
+$$
+
+**Transpose of matrix** It is possible to transform a matrix by "turning" the matrix so that the rows become columns. This is can also be done with vectors (as seen above). 
+
+The transpose of $\bold{A}$ is indicated as $\bold{A}^T$ and is where the $i\text{th}$ column of $\bold{A}$ is the $i\text{th}$ row of $\bold{A}^T$. Thus:
+$$
+\bold{A}^{(m \times n)} = \bold{A}^{T(n \times m)}  
+$$
+
+$$
+A = 
+\begin{bmatrix}
+   x_{1,1} & x_{1,2} \\
+   x_{2,1} & x_{2,2}
+\end{bmatrix}, A^T = \begin{bmatrix}
+   x_{1,1} & x_{2,1} \\
+   x_{1,2} & x_{2,2}
+\end{bmatrix}
+$$
+
+## Math with vectors and matrices
+It should be noted that for most intents and purposes a vector is simply a matrix with one column. I.e. it is a 1-dimensional matrix of the form $1 \times n$. Some operations cannot be performed between matrices and vectors though. 
+
+**Algebraic laws** Most algebraic laws hold when working with matrices. Matrices are **not** commutative with multiplication
+- Associative
+$$
+(A + B) + C = A + (B + C)
+$$
+$$
+(AB)C = A(BC)
+$$
+
+- Distributive
+$$
+A(B+C) = AB + AC
+$$
+- Scalar multiplication
+$$
+(rA)B = A(rB) = r(AB)
+$$
+
+- Commutative addition
+$$
+A+B = B+A
+$$
+
+**Sum of matrices** To add two matrices you simple add the corresponding elements with each other. This means that the two matrices both have to have the same dimensions. 
+Thus she sum of matrix $\bold{A}$ and $\bold{B}$ is defined as 
+$$
+c_{ij} = a_{ij} + b_{ij}
+$$
+Thus:
+$$
+A + B = 
+$$
+ 
+**Scalar-vector multiplication** Multiplying a scalar into either a vector or a matrix is quite simple. As mentioned previously it simply scales them and thus:
 $$
 \beta \cdot \bold{v}=(\beta x_1,\beta x_2, \cdots, \beta x_n)
 $$
@@ -79,8 +157,81 @@ $$
 \end{bmatrix}
 $$
 
-### Non-scalar math
-From here on things get a bit more hairy. To multiply vectors and matrices the first element must have the same amount of columns as the other has rows. That means that a $m \times n$ element can be multiplied by a $n \times p$ element. But not the other way around. 
+**Vector-vector multiplication** The inner product returns a scalar and can be obtained by of mutliplying two vectors  is defined as:
+$$
+v^T \cdot u = \sum_{i=1}^n v_i u_i  
+$$
+
+The outer product returns a $m \times n$ matrix defined as 
+$$
+v \cdot u^T = \begin{bmatrix}
+   v_1 u_1 & \cdots & v_1 u_n \\
+   \vdots & \ddots & \vdots \\
+   v_n u_1 & \cdots & v_n u_n 
+\end{bmatrix}
+$$
+
+**Matrix multiplication** To multiply vectors and matrices the first element must have the same amount of columns as the other has rows. That means that a $m \times n$ element can be multiplied by a $n \times p$ element. But not the other way around. The formal definition is as follows
+$$
+c_{ik} = \sum_{j=1}^n a_{ij} b_{jk}
+$$
+
+$$ \bold{A} \bold{B} = 
+\begin{bmatrix}
+   a_{1,1} & a_{1,2} \\
+   a_{2,1} & a_{2,2}
+\end{bmatrix}
+\begin{bmatrix}
+   b_{1,1} & b_{1,2} & b_{1,3} \\
+   b_{2,1} & b_{2,2} & b_{2,3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+   a_{1,1} b_{1,1} + a_{1,2} b_{2,1} & a_{1,1} b_{1,2} + a_{1,2} b_{2,2} \\
+   a_{2,1} b_{1,1} + a_{2,2} b{1,2} & a_{2,1} b_{2,1} + a_{2,2} b_{2,2}
+\end{bmatrix}
+$$
+
+**Span**
+
+**Norm** 
+
+**Cross product**
+
+**Dot product** 
+
+**Determinant**
+
+**Eigenvalue**
+
+**Rank**
+
+**Trace**
+
+**Singular non singular**
+
+**Basic operations**
+
+**Symmetric**
+
+**Inverse** 
+
+
+$$ \bold{A} \times \bold{B} = 
+\begin{bmatrix}
+   a_{1,1} & a_{1,2} \\
+   a_{2,1} & a_{2,2}
+\end{bmatrix}
+\begin{bmatrix}
+   b_{1,1} & b_{1,2} & b_{1,3} \\
+   b_{2,1} & b_{2,2} & b_{2,3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+   a_{1,1} b_{1,1} & a_{1,1} b_{1,1} \\
+   a_{1,1} b_{1,1} & a_{1,1} b_{1,1}
+\end{bmatrix}
+$$
 
 ### Dot products
 All dot products (or scalar products) return a scalar. I.e. a single value.
@@ -101,33 +252,6 @@ Where a dot product returns a scalar, the cross product always returns a matrix.
 $$
 a \times b = \lvert a \rvert \lvert b \rvert \sin(\theta) n
 $$ 
-
-$$ \bold{A} \times \bold{B} = 
-\begin{bmatrix}
-   a_{1,1} & a_{1,2} \\
-   a_{2,1} & a_{2,2}
-\end{bmatrix}
-\begin{bmatrix}
-   b_{1,1} & b_{1,2} & b_{1,3} \\
-   b_{2,1} & b_{2,2} & b_{2,3}
-\end{bmatrix}
-=
-\begin{bmatrix}
-   a_{1,1} b_{1,1} & a_{1,1} b_{1,1} \\
-   a_{1,1} b_{1,1} & a_{1,1} b_{1,1}
-\end{bmatrix}
-$$
-$$ \bold{A} =
-\begin{bmatrix}
-   x_{1,1} & x_{1,2} \\
-   x_{2,1} & x_{2,2}
-\end{bmatrix}, \bold{B}= 
-\begin{bmatrix}
-   x_{1,1} & x_{1,2} & x_{1,3} \\
-   x_{2,1} & x_{2,2} & x_{2,3}
-\end{bmatrix}
-$$
-
 
 **Vector matrix multiplication**
 
