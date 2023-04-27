@@ -230,8 +230,16 @@ This can easier be illustrated by the following image:
 The determinant of a matrix is a scalar that can be used to determine whether a matrix is invertible, as well as to calculate the area or volume of a parallelogram or parallelepiped. The determinant is also used to calculate the eigenvalues of a matrix.
 
 
-**Eigenvalue**
+**Eigenvalue and eigenvectors**  is a nonzero vector that, when multiplied by $\mathbf{A}$, produces a scalar multiple of itself. That is,
 
+$$\mathbf{A}v = \lambda v$$
+
+where $\lambda$ is a scalar known as the eigenvalue corresponding to the eigenvector $\mathbf{v}$.
+
+Solving the above-mentioned equation is done by solving the characteristic equation as such:
+$$
+\det({\mathbf{A} - \lambda \mathbf{I}}) = \begin{vmatrix} a_{1,1} - \lambda & 1 \\ 1 & a_{2,2} - \lambda \end{vmatrix}
+$$
 
 **The trace of a matrix** is the sum of all the elements on the diagonal and is defined as:
 $$
@@ -240,7 +248,3 @@ $$
 
 
 **Singular non singular** as mentioned in the part about invertibility of a matrix, a matrix is singular if it cannot be inverted.
-
-**Basic operations**
-
-**Symmetric**
