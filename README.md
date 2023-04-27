@@ -1,5 +1,6 @@
 # Important concepts of Linear Algebra
-My notes on linear algebra concepts, from a wide variety of sources including Gilbert Strang, the Deep Learning Book, and various online resources.
+My notes on linear algebra concepts, from a wide variety of sources including Gilbert Strang, the Deep Learning Book, and various online resources from GitHub.
+
 ## Representations
 There are a variety of ways of representing the different elements of linear algebra. 
 * Scalar, greek letters $\beta, \alpha, \theta$
